@@ -1,7 +1,7 @@
 import z from "zod";
 
 // Landing Page Booking information
-export const SimpleBooking = z
+export const SimpleBookingSchema = z
   .object({
     checkInDate: z
       .date()
@@ -22,3 +22,4 @@ export const SimpleBooking = z
     error: "Check-out date must be after check-in date",
     path: ["checkOutDate"],
   });
+export type SimpleBookingType = z.infer<typeof SimpleBookingSchema>;
